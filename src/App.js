@@ -1,3 +1,5 @@
+import Counter from "./components/Container/Counter/Counter";
+import Counter2 from "./components/Container/Counter/Counter2";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import ProductContainer from "./components/Products/img/ProductContainer";
@@ -9,6 +11,8 @@ function App() {
       <Navbar />
       <Header />
       <ProductContainer />
+      <Counter />
+      <Counter2 />
       <GridMUI />
     </>
   );
