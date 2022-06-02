@@ -1,45 +1,12 @@
-const productos = [
-  {
-    id: 1,
-    nombre: "Producto 1",
-    desc: "una descripción",
-    precio: 1200,
-    img: "https://raw.githubusercontent.com/sofiacartacci/sc/f9a68f9ae67684ac6fef82697a0e182255fe21ad/public/Assets/IMG_04.jpg",
-  },
-  {
-    id: 2,
-    nombre: "Producto 1",
-    desc: "una descripción",
-    precio: 1200,
-    img: "https://raw.githubusercontent.com/sofiacartacci/sc/f9a68f9ae67684ac6fef82697a0e182255fe21ad/public/Assets/IMG_03.jpg",
-  },
-
-  {
-    id: 3,
-    nombre: "Producto 1",
-    desc: "una descripción",
-    precio: 1200,
-    img: "image.png",
-  },
-
-  {
-    id: 4,
-    nombre: "Producto 1",
-    desc: "una descripción",
-    precio: 1200,
-    img: "https://raw.githubusercontent.com/sofiacartacci/sc/f9a68f9ae67684ac6fef82697a0e182255fe21ad/public/Assets/IMG_01.jpg",
-  },
-
-  {
-    id: 5,
-    nombre: "Producto 1",
-    desc: "una descripción",
-    precio: 1200,
-    img: "https://raw.githubusercontent.com/sofiacartacci/sc/f9a68f9ae67684ac6fef82697a0e182255fe21ad/public/Assets/IMG_04.jpg",
-  },
-];
+import { useEffect, useState } from "react";
+import { Spinner } from "react-bootstrap";
+import { pedirDatos } from "../../mock/pedirDatos";
+import ItemList from "../itemList/ItemList";
 
 export const ItemListContainer = () => {
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   // const promesa = new Promise((resolve, reject) => {
   // resolve("Promesa resuelta");
   //reject("Promesa rechazada");
@@ -64,30 +31,35 @@ export const ItemListContainer = () => {
   //  console.log("ERROR:", error)
   //})
 
-  const pedirDatos = (retornar) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (retornar) {
-          resolve("Promesa resuelta");
-        } else {
-          reject("Promesa rechazada");
-        }
-      }, 2000);
-    });
-  };
+  //const [algo, setAlgo] = useState(true);
 
-  pedirDatos(false)
-    .then((resp) => {
-      console.log(resp);
-    })
-    .catch((error) => {
-      console.log("ERROR:", error);
-    });
+  //const handleAlgo = () => {
+  //setAlgo(!algo);
+  //};
+
+  useEffect(() => {
+    setLoading(true);
+    pedirDatos()
+      .then((resp) => {
+        setItems(resp);
+      })
+      .catch((error) => {
+        console.log("ERROR:", error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <section className="container my-5">
-      <h2>Nuestros productos</h2>
-      <hr />
+      {loading ? (
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      ) : (
+        <ItemList items={items} />
+      )}
     </section>
   );
 };

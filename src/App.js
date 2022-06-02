@@ -12,8 +12,6 @@ function App() {
       <Navbar />
       <Header />
       <ProductContainer />
-      <Counter />
-      <Counter2 />
       <ItemListContainer />
       <GridMUI />
     </>
