@@ -9,7 +9,7 @@
 
 :root {
   --mainColor: black;
-  --mainColorLight: #e58b04;
+  --mainColorLight: #e70303;
   --secondaryColor: #555;
   --textColor: #eee;
 }
@@ -86,3 +86,5 @@ header .nav-btn {
 .w-100 {
   width: 42% !important;
 }
+
+/*--------PRODUCTS------- */

@@ -20,3 +20,20 @@
 .lista-nombres {
   font-size: 40px;
 }
+
+div {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+}
+
+h2 {
+  color: red;
+  font-size: 2rem;
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+}
