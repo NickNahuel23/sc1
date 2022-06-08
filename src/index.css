@@ -1,13 +1,212 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 2px 6px #ff0000;
+  box-sizing: border-box;
+}
+
+/* ---- HEADER  ----*/
+header {
+  width: 100%;
+  height: 8%;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  position: fixed;
+  box-sizing: border-box;
+  background-color: black;
+  box-shadow: 0 2px 2px #ff0000;
+}
+
+a {
+  color: white !important;
+  text-decoration: none !important;
+  text-transform: uppercase;
+}
+
+a:hover {
+  color: #ff0000 !important;
+}
+
+li {
+  list-style: none;
+}
+
+header ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+header ul li {
+  padding: 0 1rem;
+}
+
+header ul li a {
+  font-weight: bold;
+}
+
+header .cart {
+  position: relative;
+  cursor: pointer;
+}
+header .cart box-icon {
+  width: 45px;
+  height: 45px;
+}
+
+header .cart span {
+  position: absolute;
+  top: 0rem;
+  right: -1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 0rem;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: crimson;
+}
+
+/* ---- PRODUCTS ---- */
+.title {
+  text-align: center;
+  font-size: 2rem;
+  padding: 10rem 0 0 0;
+  color: #ff0000;
+}
+
+.title:hover {
+  color: aliceblue;
+}
+
+.products {
+  padding: 2rem 34rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 3rem 1rem;
+  box-sizing: border-box;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 1px 10px 10px 2px rgba(0, 0, 0, 0.2);
+  border: 6px solid transparent;
+  border-radius: 5px;
+}
+
+.product:hover {
+  border: 2px solid #fb4646;
+}
+
+.product__img img {
+  border-radius: 30px;
+  border-style: dotted;
+  width: 300px;
+  height: 390px;
+  margin: 1rem;
+}
+
+.product__footer {
+  padding: 1rem;
+}
+
+.product__footer h1 {
+  font-weight: 600;
+  color: white;
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+}
+
+.product__footer p {
+  font-weight: 700;
+  color: #ff0000;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.product__footer .price {
+  font-size: 2rem;
+  color: white;
+}
+
+.product .buttom {
+  width: 100%;
+  height: 45px;
+  display: grid;
+  grid-template-columns: 2rf 1fr;
+  gap: 1rem 3rem;
+  padding: 0 1rem;
+  margin: 1rem;
+  margin-top: 1rem;
+}
+
+.buttom .btn {
+  border: none;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.buttom button {
+  background-color: white;
+  max-width: 250px;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  color: black;
+  font-weight: 600;
+}
+
+.buttom div {
+  background-color: #ff0000;
+  display: grid;
+  align-items: center;
+  margin-left: -2rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.buttom div a {
+  color: white;
+  font-weight: 700;
+}
+
+.buttom div a:hover {
+  color: white;
+}
+
+/* HOME */
+
+.imgHeader {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* MQ */
+
+@media only screen and (max-width: 600px) {
+  header ul {
+    display: none;
+  }
 }
